@@ -156,7 +156,3 @@ func (f *Finder) Wait(i *Image, r *Region, t time.Duration) *Match {
 
 	return nil
 }
-
-func inBetween(i, min, max float64) bool {
-	return (i >= min) && (i <= max)
-}

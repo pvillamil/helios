@@ -15,9 +15,9 @@ type Clicker struct {
 // This doesn't use the standard Click() function of any library which is easy
 // to detect as an automated click - rather it adds entropy throughout the mouse events.
 func (c *Clicker) Click(match *Match) {
-	c.sleepRandomly(0.2, 0.5)
+	c.sleepRandomly(0.1, 0.3)
 	c.moveMouseRandomlyWithinBox(match.topLeft.x, match.topLeft.y, float64(match.width), float64(match.height))
-	c.sleepRandomly(0.2, 0.5)
+	c.sleepRandomly(0.1, 0.3)
 	c.performRandomisedClick()
 }
 
@@ -27,7 +27,7 @@ func (c *Clicker) MoveMouseInRegion(region *Region) {
 
 func (c *Clicker) performRandomisedClick() {
 	robotgo.Toggle("left", "down")
-	c.sleepRandomly(0.2, 0.5)
+	c.sleepRandomly(0.1, 0.3)
 	robotgo.Toggle("left", "up")
 }
 
